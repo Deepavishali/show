@@ -58,14 +58,14 @@ export default function SignUp() {
   });
 
   const createUser = (newUser) => {
-    fetch("http://localhost:7000/user/signup", {
+    fetch("https://show-backend-4fzv-git-master-deepavishali.vercel.app/user/signup", {
       method: "POST",
       body: JSON.stringify(newUser),
       headers: { "Content-Type": "application/json" },
     })
     .then((res)=>{
       if(res.status===400){
-        alert("Invalid credentials")
+        alert("Password must have atleast 8 characters [Atleast one capital letter,numbers and special cases mandatory]")
       }
       else{
         alert("SignUp successfull,Click ok!")
