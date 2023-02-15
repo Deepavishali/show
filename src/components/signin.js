@@ -18,7 +18,6 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 
-
 const userValidationSchema = yup.object({
   username: yup.string()
     .required("username is mandatory"),
