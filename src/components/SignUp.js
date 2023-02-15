@@ -70,7 +70,7 @@ export default function SignUp() {
       else{
         alert("SignUp successfull,Click ok!")
         localStorage.setItem("authenticated",true);
-        navigate("/client");
+        navigate("/movieboard");
        }
     })
       .then((data) => data.json())
