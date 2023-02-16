@@ -5,9 +5,11 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import InfoIcon from '@mui/icons-material/Info';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+//import AddIcon from '@mui/icons-material/Add';
 import Tooltip from "@mui/material/Tooltip";
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+
 
 
 export default function Admin() {
@@ -40,19 +42,19 @@ export default function Admin() {
                                         <ListGroup.Item>Summary : {object.summary}</ListGroup.Item>
                                     </ListGroup>
                                     <Card.Body>
-                                        <Tooltip title="Information" arrow>
-                                            <Button variant="primary" onClick={()=>navigate(`/info/${object.id}`)}><InfoIcon  /></Button>
+                                        <Tooltip title="Movie Info" arrow>
+                                            <Button variant="primary" onClick={() => navigate(`/info/${object.id}`)}><InfoIcon /></Button>
                                         </Tooltip>&nbsp;&nbsp;
 
-                                        <Tooltip title="Edit" arrow><Button variant="success" onClick={()=>navigate("/edit")}><EditIcon  /></Button></Tooltip>&nbsp;&nbsp;
-
-                                        <Tooltip title="delete" arrow><Button variant="danger" onClick={() => {
-                                        fetch(`https://show-backend-4fzv-git-master-deepavishali.vercel.app/movie/${object.id}`, { method: "DELETE" })
-                                            .then(() => getMovie());
-                                    }}>
+                                        <Tooltip title="Edit Movie" arrow><Button variant="success" onClick={() => navigate(`/edit/${object.id}`)}><EditIcon /></Button></Tooltip>&nbsp;&nbsp;
+                                       
+                                        <Tooltip title="delete Movie" arrow><Button variant="danger" onClick={() => {
+                                            fetch(`https://show-backend-4fzv-git-master-deepavishali.vercel.app/movie/${object.id}`, { method: "DELETE" })
+                                                .then(() => getMovie());
+                                        }}>
                                             <DeleteIcon />
-                                            </Button>
-                                            </Tooltip>&nbsp;&nbsp;
+                                        </Button>
+                                        </Tooltip>&nbsp;&nbsp;
                                     </Card.Body>
                                 </Card>
                             </row>
@@ -60,6 +62,7 @@ export default function Admin() {
                     ))}
                 </div>
             </div>
+            
         </div>
     )
 }

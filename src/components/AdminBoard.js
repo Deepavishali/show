@@ -38,6 +38,7 @@ function AdminBoard() {
             <Button color="inherit" onClick={()=>navigate("/adminboard")}>
               <h4>AdminDashboard</h4>
             </Button>&nbsp;&nbsp;
+            <Button variant="secondary" onClick={() => navigate("/addmovie")} ><h4>Add Movie</h4></Button>
             {/* <Button color="inherit" >
               <h4>Dashboard</h4>
             </Button>&nbsp;&nbsp; */}
