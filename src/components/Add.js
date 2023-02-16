@@ -8,6 +8,9 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 
 const movieValidationSchema = yup.object({
+    id:yup.number()
+    .min(0,"Id mandatory")
+    .required("Required!!"),
     name: yup.string()
         .min(4, "Enter movie name")
         .required("Required!!"),
@@ -30,6 +33,7 @@ const movieValidationSchema = yup.object({
 export default function Add({movie,setMovie}) {
      const formik = useFormik({
         initialValues: {
+            id:"",
             name: "",
             poster: "",
             rating: "",
@@ -60,6 +64,16 @@ export default function Add({movie,setMovie}) {
     return (
         <form onSubmit={formik.handleSubmit} style={{ marginLeft: '100px', marginTop: '50px' }} className="add-user-form">
             <h1 style={{ color: "green", fontWeight: 'bolder', fontFamily: 'cursive' }}>Fill the below details to add Movie✨</h1><br />
+            <TextField
+                id="id"
+                name="id"
+                label="Id"
+                variant="outlined"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.id}
+                style={{ width: '800px' }}
+            /><br/><br/>
             <TextField
                 id="name"
                 name="name"
@@ -133,7 +147,7 @@ export default function Add({movie,setMovie}) {
                 type="submit"
                 variant="contained"
                 color="success"
-                //onClick={createMovie}
+                onClick={createMovie}
             >
                 Add New Movie
             </Button>&nbsp;&nbsp;
