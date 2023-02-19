@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function AdminBoard() {
   const navigate = useNavigate();
-//   const [detail, setDetail] = useState([]);
+  //   const [detail, setDetail] = useState([]);
   const [mode, setMode] = useState("light");
   const theme = createTheme({
     palette: {
@@ -17,28 +17,29 @@ function AdminBoard() {
     },
   });
 
-//   useEffect(() => {
-//     fetch("https://63a3d79c471b38b206173b15.mockapi.io/users")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setDetail(data);
-//       });
-//   }, []);
+  //   useEffect(() => {
+  //     fetch("https://63a3d79c471b38b206173b15.mockapi.io/users")
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setDetail(data);
+  //       });
+  //   }, []);
 
   return (
     <div>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {/* Navbar */}
-        <AppBar position="static">
+        <AppBar position="static" style={{backgroundColor:"green"}}>
           <Toolbar>
-             <Button color="inherit" onClick={()=>navigate("/movieboard")}>
+            <Button color="inherit" onClick={() => navigate("/movieboard")}>
               <h4>Client Dashboard</h4>
             </Button>&nbsp;&nbsp;
-            <Button color="inherit" onClick={()=>navigate("/adminboard")}>
+            <Button color="inherit" onClick={() => navigate("/adminboard")}>
               <h4>AdminDashboard</h4>
             </Button>&nbsp;&nbsp;
             <Button variant="secondary" onClick={() => navigate("/addmovie")} ><h4>Add Movie</h4></Button>
+            
             {/* <Button color="inherit" >
               <h4>Dashboard</h4>
             </Button>&nbsp;&nbsp; */}
@@ -57,16 +58,16 @@ function AdminBoard() {
 
         {/* Listed all movies from the client */}
         <div>
-        <Admin/>
+          <Admin />
         </div>
-       
+
         {/* <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/edit/:userid" element={<EditUser />} />
           <Route path="/adduser" element={<AddUser  detail={detail} setDetail={setDetail}/>} />
           <Route path="/userdetail/:userid" element={<UserDetail />} />
         </Routes> */}
-    </ThemeProvider>
+      </ThemeProvider>
     </div>
   )
 }

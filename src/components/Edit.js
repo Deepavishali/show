@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 
-
 export default function EditMovie() {
     const { movieid } = useParams();
     const [movie, setMovie] = useState(null);

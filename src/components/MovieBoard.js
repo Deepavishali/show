@@ -38,6 +38,7 @@ function MovieBoard() {
             <Button color="inherit" onClick={()=>navigate("/adminboard")}>
               <h4>AdminDashboard</h4>
             </Button>&nbsp;&nbsp;
+            <Button variant="secondary" onClick={() => navigate("/contactus")} ><h4>Contact Us</h4></Button>
             {/* <Button color="inherit" >
               <h4>Dashboard</h4>
             </Button>&nbsp;&nbsp; */}
