@@ -17,7 +17,7 @@ export default function ContactUs() {
         name: name.value,
         email: email.value,
         message: message.value,
-      };
+        };
       let response = await fetch("https://show-backend-4fzv-git-master-deepavishali.vercel.app/user/contact", {
         method: "POST",
         headers: {
