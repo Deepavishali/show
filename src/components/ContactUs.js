@@ -32,7 +32,7 @@ export default function ContactUs() {
 
  return (
         <form onSubmit={handleSubmit} style={{ marginLeft: '100px', marginTop: '50px' }} className="add-user-form">
-            <h1 style={{ color: "green", fontWeight: 'bolder', fontFamily: 'cursive' }}>Fill the below details to add user 😜🤞✨</h1><br />
+            <h1 style={{ color: "green", fontWeight: 'bolder', fontFamily: 'cursive' }}>✨Contact Us✨</h1><br />
              <TextField
                 id="name"
                 name="name"
